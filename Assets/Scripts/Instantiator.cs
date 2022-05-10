@@ -8,6 +8,8 @@ public class Instantiator : MonoBehaviour
     public GameObject objectToClone;
     int cloneAmount; //variable para el while
     public Text txtUserCloneAmount; //Ingreso usuario
+    GameObject clon;
+
     // Elimino funciones default
 
     public void MultiInstantiate()
@@ -16,15 +18,11 @@ public class Instantiator : MonoBehaviour
         {
             cloneAmount = int.Parse(txtUserCloneAmount.text);
         }
-        int counter = 0;
 
-        
-        
-            while (counter < cloneAmount)
+        for (int i = 0; i < cloneAmount; i++)
             {
-                Instantiate(objectToClone);
-                counter++;
-            }
-        
+                clon = Instantiate(objectToClone);
+            Destroy (clon, 2);
+            }        
     }
 }
